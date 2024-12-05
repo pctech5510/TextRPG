@@ -1,3 +1,24 @@
+# Work I progress as I progress in python.
+
+
+def Combat(playerHP, goblinHP):
+    while playerHP > 0 and goblinHP > 0:
+        #Player's attack
+        goblinHP -= 10 #example damage
+        print(f"The health dropped to {goblinHP}")
+
+        if goblinHP <= 0:
+            print("You have defeated the goblin!")
+            break
+
+        #Enemies attack
+        playerHP -=5
+        print(f"You now have {playerHP} HP left.")
+
+        if playerHP <= 0:
+            print("The enemy has defeated you!")
+            break
+
 gameRunning = True
 playerName = "Player"
 
@@ -43,3 +64,5 @@ while gameRunning:
             gameRunning = False
         case _:
             print("\nInvalid choice, please try again.")
+
+Combat(playerHP=100, goblinHP=40)
